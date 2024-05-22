@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: opacity 0.5s ease-in-out;
+}
+
+.container2 {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 0px 0px 10px 10px;
+    text-decoration: none;
+}
+
+a {
+    color: #333; /* Match link color with heading */
+    text-decoration: none; /* Remove underline from link */
+    font-weight: bold; /* Make link text bolder */
+}
+
+a:hover { /* Style for link on hover */
+    color: #007bff; /* Change link color on hover (blue) */
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
