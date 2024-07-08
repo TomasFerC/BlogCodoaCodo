@@ -1,0 +1,217 @@
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+    transition: all is ease;
+    padding: 5%;
+}
+
+.informacion {
+    width: 100%;
+    margin-left: 20%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(170, 216, 235);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.info-pequena {
+    width: 100%;
+    padding: 0 30px;
+}
+
+.info-pequena h2 {
+    font-size: 2.5rem;
+}
+
+.info-pequena p {
+    margin: 15px 0;
+}
+
+.info-pequena input {
+    width: 100%;
+    background: #246eb9;
+    color: white;
+    border: none;
+    display: block;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 6px 6px 6px 6px;
+    font-family: 'Slabo 27px', serif;
+    font-size: 17px;
+}
+
+.info-pequena input:hover {
+    background-color: #1f618d;
+    border: none;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+}
+
+.form-informacion {
+    display: flex;
+    width: 100%;
+    margin-right: 20%;
+    justify-content: center;
+    text-align: center;
+    background-color: lightgrey;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 2%;
+}
+
+.form-informacion-pequena {
+    padding: 0 30px;
+}
+
+.form-informacion-pequena h2 {
+    font-size: 2rem;
+}
+
+.form-informacion-pequena p {
+    margin: 15px 0;
+}
+
+.icons {
+    margin: 15px 0;
+}
+
+.icons i {
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    margin: 0 10px;
+    color: #4357ad;
+    border: solid 2px #4357ad;
+    transition: background-color .3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+}
+
+.icons i:hover {
+    background-color: #1f618d;
+    color: white;
+}
+
+.form {
+    margin: 60px 0 0 0;
+}
+
+.form label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 0 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+}
+
+.form label input {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: black;
+}
+
+.form input[type="submit"] {
+    /*background-color: #d40e0e;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);*/
+    width: 100%;
+    text-align: center;
+    background: #246eb9;
+    color: white;
+    border: none;
+    display: block;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 6px 6px 6px 6px;
+    font-family: 'Slabo 27px', serif;
+    font-size: 17px;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #1f618d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+}
+
+
+
+@media screen and (max-width: 1090px) {
+    html {
+        font-size: 15px;
+    }
+
+    .principal {
+        width: 100%;
+    }
+
+    .imagen {
+        background-image: url('../img/inmobiliaria-foto.jpg');
+        background-size: cover;
+        background-position: center;
+        display: block;
+        padding: 50px;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .container {
+        padding: 3%;
+    }
+
+    .informacion {
+        margin-left: 5%;
+    }
+
+    .form-informacion {
+        margin-right: 5%;
+    }
+
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+
+    html {
+        font-size: 10px;
+    }
+
+    .container {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .informacion {
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%;
+        padding: 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0;
+    }
+
+    .form-informacion {
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%;
+        padding: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 0;
+    }
+}

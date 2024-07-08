@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-hoC5tLwEzp7ENYQ05FykeRVKG9tJJVHDJkY+ftP4ZJz5WouH3F6U1QT0vQ87s5q3VY3b5Tt1f4z+d6iyu0fi8g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Flask Proyecto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% block head %}{% endblock %}
+</head>
+<!-- Contenido del encabezado -->
+
+<body>
+    <div class="wrapper">
+        <!-- Contenido del encabezado -->
+        <div id="sidebar-off">
+            <div class="logo">
+                <img src="/img/31196549_7680244.png" alt="Logo CoDo Prop">
+            </div>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                    <li><a href="{{ url_for('news') }}">Noticias</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contacto</a></li>
+                    <li><a href="{{ url_for('crud') }}">Crud</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="{{ url_for('registro') }}">Iniciar sesión</a>
+            </div>
+        </div>
+        <div id="sidebar-on">
+            <div class="toggle-btn">
+                <span>&#9776;</span>
+            </div>
+            <ul>
+                <li><img src="/img/31196549_7680244.png" alt="Logo CoDo Prop" class="logo"></li>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('news') }}">Noticias</a></li>
+                <li><a href="{{ url_for('contact') }}">Contacto</a></li>
+                <li><a href="{{ url_for('crud') }}">Crud</a></li>
+                <li><a href="{{ url_for('registro') }}">Iniciar sesión</a></li>
+            </ul>
+        </div>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2023 CoDo Prop - Todos los derechos reservados.</p>
+                <div class="social-media-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,375 @@
+/* Estilos para el encabezado */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.hero {
+  color: black;
+  padding: 0px;
+  text-align: center;
+}
+
+h1{
+  color:chocolate;
+  border-color: #2980b9;
+}
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: "Crimson Pro", serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.hero-content p {
+  font-size: 28px;
+  margin-bottom: 40px;
+  font-family: "Crimson Pro", serif;
+  font-style: normal;
+  font-weight: 600;
+  
+}
+
+.filters {
+  padding: 15px;
+}
+
+.filters h2 {
+  margin-bottom: 15px;
+}
+
+.filtros {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* Tres columnas */
+  grid-gap: 10px;
+  /* Espacio entre columnas */
+}
+
+.filter-group.buscador {
+  width: 90%;
+}
+
+.filter-group select,
+.filter-group input {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.filter-group.precio,
+.filter-group.buscar {
+  display: flex;
+  padding: 17px 0px 0px 0px;
+  width: 90%;
+}
+
+.filter-btn {
+  background-color: #2980b9;
+  /* Azul */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 90%;
+}
+
+.filter-btn:hover {
+  background-color: #2980b9;
+  /* Azul más oscuro al pasar el ratón */
+}
+
+.toggle-arrow {
+  display: none;
+}
+
+.properties {
+  background-color: #dadada;
+}
+
+.properties h2 {
+  padding: 20px;
+}
+
+.properties-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Dos columnas en computadoras */
+  grid-gap: 10px;
+  list-style-type: none;
+}
+
+.property-item {
+  background-color: #dadada;
+  /* Color de fondo de cada propiedad */
+  border: 1px solid #ddd;
+  /* Borde alrededor de cada propiedad */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  padding: 20px;
+  /* Espaciado interior */
+}
+
+.property-link {
+  text-decoration: none;
+  /* Elimina el subrayado de los enlaces */
+  color: #333;
+  /* Color del texto */
+}
+
+.property-image {
+  width: 100%;
+  margin: 0px auto;
+  margin-top: 100px;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+  border: 10px solid white;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+#slider {
+  width: 100%;
+  margin: 0px auto;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+  border: 10px solid white;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
+  ;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+img {
+  width: 100%;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  padding: 15px 5px;
+  border-radius: 5px;
+  background: white;
+}
+
+.controls:hover {
+  background: white;
+  transition: 0.3s;
+}
+
+.controls:active {
+  color: grey;
+}
+
+#left-arrow {
+  left: 10px;
+}
+
+#right-arrow {
+  right: 10px;
+}
+
+#dots-con {
+  text-align: center;
+}
+
+.dot {
+  display: inline-block;
+  background: grey;
+  padding: 8px;
+  border-radius: 50%;
+  margin: 10px 5px;
+}
+
+.active {
+  background: rgb(7, 67, 213);
+}
+
+
+
+.controls {
+  font-size: 1em;
+}
+
+#dots-con {
+  display: none;
+}
+
+.property-info {
+  margin-top: 10px;
+  /* Margen superior */
+}
+
+.property-info h3,
+.property-info span {
+  display: block;
+  /* Hace que los elementos se muestren uno debajo del otro */
+  margin-top: 5px;
+}
+
+nav {
+  text-align: center;
+  /* Centra el contenido horizontalmente */
+  padding: 20px;
+}
+
+.pagination li {
+  display: inline;
+  /* Muestra los elementos en la misma línea */
+  margin: 0 5px;
+  /* Agrega un pequeño margen entre los elementos */
+}
+
+.imagen-fondo {
+  background-image: url('../img/inmobiliaria-foto.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  /* Ajusta la opacidad del fondo */
+}
+
+
+
+@media screen and (max-width: 1090px) {
+
+  .imagen {
+    background-image: url('../img/inmobiliaria-foto.jpg');
+    display: block;
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Ajusta la opacidad del fondo */
+    height: 20%;
+  }
+
+  .properties-list {
+    grid-template-columns: 1fr;
+  }
+
+  .property-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra el contenido en pantallas pequeñas */
+  }
+
+  .hero {
+    color: black;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    display: none;
+  }
+
+  .filters-container {
+    position: relative;
+    /* Positioning for container */
+  }
+
+  /* Filter Menu Styles (Base) */
+  .filtros {
+    position: relative;
+    /* Absolute positioning for menu */
+    top: 0;
+    /* Align to top of container */
+    left: 0;
+    /* Align to left of container */
+    width: 100%;
+    /* Stretch to full width */
+    height: auto;
+    /* Cover entire viewport height */
+    background-color: #fff;
+    /* Menu background color */
+    padding: 20px;
+    display: none;
+    /* Initially hide the menu */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    /* Add transition effects */
+
+  }
+
+  .filters h2 {
+    font-size: 18px;
+
+  }
+
+  .filtros.active {
+    display: block;
+    /* Show menu when active */
+  }
+
+
+  .toggle-arrow {
+    font-size: 18px;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .filter-group label {
+    margin-bottom: 5px;
+  }
+
+  .filter-group select,
+  .filter-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .filter-group.buscar {
+    display: flex;
+    width: 100%;
+  }
+
+  .filter-btn {
+    background-color: #3498db;
+    /* Azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    /* Stretch the button to full width */
+    padding: 8px;
+    /* Add some padding for better click target */
+  }
+
+  .filter-btn:hover {
+    background-color: #2980b9;
+    /* Azul más oscuro al pasar el ratón */
+  }
+}

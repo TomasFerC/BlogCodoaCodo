@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Listado de Propiedades</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/listado.css') }}">
+<script src="{{ url_for('static', filename='js/eliminar.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+<h1>Listado de Propiedades del Inventario</h1><br>
+
+<table id="propiedades-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tipo Operación</th>
+            <th>Tipo Propiedad</th>
+            <th>Zona</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>DNI del Propietario</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Aquí se insertarán dinámicamente las filas de propiedades -->
+    </tbody>
+</table><br>
+
+{% endblock %}

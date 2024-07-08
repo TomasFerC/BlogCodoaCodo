@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Agregar producto 🚀</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/alta.css') }}">
+<script src="{{ url_for('static', filename='js/altas.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<h1>Agregar Productos al Inventario</h1><br>
+<!--enctype="multipart/form-data" es necesario para enviar archivos
+    al back.-->
+<form id="formulario" enctype="multipart/form-data" method="POST">
+    <label for="tipo_operacion">Tipo operacion:</label>
+    <input type="text" id="tipo_operacion" name="tipo_operacion" required><br>
+    <label for="tipo_propiedad">Tipo propiedad:</label>
+    <input type="text" id="tipo_propiedad" name="tipo_propiedad" required><br>
+    <label for="zona">Zona:</label>
+    <input type="text" id="zona" name="zona" required><br>
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" name="descripcion" required><br>
+    <label for="precio">Precio:</label>
+    <input type="number" step="0.01" id="precio" name="precio" required><br>
+    <label for="imagenPropiedad">Imagen del producto:</label>
+    <input type="file" id="imagenPropiedad" name="imagen">
+    <br><br>
+    <label for="dniPropietario">DNI propietario:</label>
+    <input type="text" id="dniPropietario" name="propetario">
+    <button type="submit">Agregar Producto</button>
+</form>
+
+{% endblock %}

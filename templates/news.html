@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>CoDo Prop - Inmobiliaria</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/new.css') }}">
+<script src="{{ url_for('static', filename='js/news.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<!-- Cuerpo de la pagina -->
+<div id="cuerpo">
+    <div id="maingrid">
+        <!-- Grid de Noticias -->
+        <div class="container" id="maingrid">
+            <div class="maingrid-box box-1 baseline noticias">
+                <div class="baseline-box">
+                    <div id="texto-difuminado">
+                        <a href="/img/news-1.jpg"> La compraventa de inmuebles en CABA creció después de 29 meses de
+                            caída consecutiva</a>
+                        <p class="small">Hace menos de 1 minuto</p>
+                    </div>
+                </div>
+            </div>
+            <div class="maingrid-box box-2 noticias">
+                <div id="texto-difuminado">
+                    <a href="/img/news-2.jpg"> Pese a la suba del 16,5% en enero, la compraventa de inmuebles en
+                        CABA se mantiene baja</a>
+                    <p class="small">Hace 3 horas</p>
+                </div>
+            </div>
+            <div class="maingrid-box box-3 noticias">
+                <div id="texto-difuminado">
+                    <a href="/img/news-3.jpg"> La importancia de la logística, un rubro clave con enorme capacidad
+                        de crecimiento y oportunidades</a>
+                    <p class="small">Hace 8 horas</p>
+                </div>
+            </div>
+            <div class="maingrid-box box-4 noticias">
+                <div id="texto-difuminado">
+                    <a href="/img/news-4.jpg"> Los desarrollos fuera de la ciudad son los constantes elegidos de un
+                        atractivo estilo de vida</a>
+                    <p class="small">Hace 23 horas</p>
+                </div>
+            </div>
+            <div class="maingrid-box box-5 noticias">
+                <div id="texto-difuminado">
+                    <a href="/img/news-5.jpg"> Aberg Cobo, un proyecto de jerarquía en la Ciudad de Buenos Aires</a>
+                    <p class="small">Hace 1 dia</p>
+                </div>
+            </div>
+            <div class="maingrid-box box-6 noticias">
+                <div id="texto-difuminado">
+                    <a href="/img/news-6.jpg"> Después de años muy complejos, las oficinas vuelven a crecer con
+                        consultas y concreción de operaciones </a>
+                    <p class="small">Hace 2 dias</p>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- Grid de Notas -->
+        <div class="container2">
+            <div class="maingrid-box2 box2-1 autor">
+                <div class="image">
+                    <img src="/img/nota-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <a href="">4 tips para preparar tu casa a la hora de pintar</a>
+                    </div>
+                    <div class="date">
+                        Hace 5 horas.
+                    </div>
+                </div>
+            </div>
+            <div class="maingrid-box2 box2-2 autor">
+                <div class="image">
+                    <img src="/img/nota-2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <a href="">Smart homes: una tendencia que crece día a día</a>
+                    </div>
+                    <div class="date">
+                        Hace 18 horas.
+                    </div>
+                </div>
+            </div>
+            <div class="maingrid-box2 box2-3 autor">
+                <div class="image">
+                    <img src="/img/nota-3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <a href="">¿Cuáles son las tendencias en color para el 2023?</a>
+                    </div>
+                    <div class="date">
+                        Hace 1 dia.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

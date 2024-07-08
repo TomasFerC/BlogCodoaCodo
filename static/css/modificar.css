@@ -1,0 +1,126 @@
+/* modificar.css */
+
+/* Estilos para el contenedor principal */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 45vh; /* Altura mínima del 45% del viewport */
+    transition: all 0.3s ease;
+    position: relative; /* Asegura que el padding-bottom sea relativo al contenedor */
+    padding-bottom: 50px; /* Añade espacio al final para evitar solapamiento con el footer */
+}
+
+#datos-propiedad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px; /* Ajusta el margen según sea necesario */
+}
+
+/* Estilos para el título principal */
+h1 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin: 35px 0 20px;
+}
+
+/* Estilos para los formularios */
+form {
+    max-width: 600px;
+    width: 100%; /* Asegura que el formulario se extienda al ancho completo del contenedor */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form button[type="submit"],
+form a {
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+}
+
+form button[type="submit"] {
+    background-color: #1f618d;
+    color: white;
+    border: none;
+}
+
+form a {
+    background-color: #f44336;
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+form a:hover {
+    background-color: #cc0000;
+}
+
+/* Estilos para imágenes */
+#imagen-actual,
+#imagen-vista-previa {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Estilos para mensajes de error */
+#error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Media Queries para responsive */
+@media screen and (max-width: 1090px) {
+    .container {
+        padding: 5%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 5%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}

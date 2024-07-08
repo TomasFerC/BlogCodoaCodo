@@ -1,0 +1,36 @@
+.container {
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+    padding: 50px;
+    height: 40vh;
+    transition: opacity 0.5s ease-in-out;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+@media screen and (max-width: 1090px){
+    .container {
+      text-align: center;
+      margin-top: 50px;
+      height: 43vh;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .container {
+      text-align: center;
+      margin-top: 50px;
+      height: 45vh;
+    }
+
+    .container h1 {
+      font-size: 28px;
+    }
+  }

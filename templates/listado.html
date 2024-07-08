@@ -1,0 +1,30 @@
+<!-- listado.html -->
+
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Listado de productos 🚀</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/listado.css') }}">
+<script src="{{ url_for('static', filename='js/listado.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Listado de Productos del Inventario</h1><br>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo Operación</th>
+                <th>Tipo Propiedad</th>
+                <th>Zona</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>DNI del Propietario</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody id="tablaPropiedades"></tbody>
+    </table>
+</div>
+{% endblock %}

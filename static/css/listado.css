@@ -1,0 +1,75 @@
+/* listado.css */
+
+/* Estilos generales */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    padding: 5% 0;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Estilos para filas alternas */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para pantallas menores a 780px usando CSS Grid */
+@media (max-width: 780px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    tbody tr {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+    }
+
+    tbody tr td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+
+    tbody tr td:before {
+        content: attr(data-label);
+        flex-basis: 30%;
+        font-weight: bold;
+    }
+
+    tbody tr td img {
+        max-width: 100px;
+        height: auto;
+        margin-left: 10px;
+    }
+
+    /* Ocultar encabezados en dispositivos móviles */
+    thead {
+        display: none;
+    }
+}

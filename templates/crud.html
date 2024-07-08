@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Ejemplo de uso de la API 🚀</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/crud.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container" id="blinkContainer">
+    <h1>Ejemplos de uso de la API</h1><br>
+    <table>
+        <tr>
+            <td class="contenedor-centrado"><a href="{{ url_for('altas') }}">Alta de productos</a></td>
+        </tr>
+        <tr>
+            <td class="contenedor-centrado "><a href="{{ url_for('listado') }}">Listado de productos</a></td>
+        </tr>
+        <tr>
+            <td class="contenedor-centrado "><a href="{{ url_for('modificar') }}">Modificar datos de productos</a></td>
+        </tr>
+        <tr>
+            <td class="contenedor-centrado "><a href="{{ url_for('eliminar') }}">Eliminar productos</a></td>
+
+        </tr>
+    </table>
+</div>
+{% endblock %}

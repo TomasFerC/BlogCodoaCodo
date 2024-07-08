@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>En Construcción</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/erro.css') }}">
+<script src="{{ url_for('static', filename='js/error.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="container" id="blinkContainer">
+    <h1>Página en Construcción</h1>
+    <p>Estamos trabajando para mejorar nuestro sitio web. ¡Vuelve pronto!</p>
+</div>
+{% endblock %}
