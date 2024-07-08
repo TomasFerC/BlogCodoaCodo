@@ -5,18 +5,28 @@ from werkzeug.utils import secure_filename
 import os
 import time
 
-app = Flask(_name_)
+app = Flask(__name__)
+app = Flask(__name__)
 CORS(app)
 
+
 class Catalogo:
-    def _init_(self, host, user, password, database):
+    def __init__(self, host, user, password, database):
         self.conn = mysql.connector.connect(
             host=host,
             user=user,
-            password=password,
-            database=database
+            password=password
         )
-        self.cursor = self.conn.cursor(dictionary=True)
+        self.cursor = self.conn.cursor()
+        try:
+            self.cursor.execute(f"USE {database}")
+        except mysql.connector.Error as err:
+            if err.errno == mysql.connector.errorcode.ER_BAD_DB_ERROR:
+                self.cursor.execute(f"CREATE DATABASE {database}")
+                self.conn.database = database
+            else:
+                raise err
+
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS propiedades (
             id INT AUTO_INCREMENT PRIMARY KEY,
             tipo_operacion VARCHAR(255) NOT NULL,
@@ -26,19 +36,25 @@ class Catalogo:
             precio DECIMAL(10, 2) NOT NULL,
             imagen_url VARCHAR(255),
             dni_propietario INT(8))''')
+
         self.conn.commit()
+
+        self.cursor.close()
+        self.cursor = self.conn.cursor(dictionary=True)
 
     def listar_propiedades(self):
         self.cursor.execute("SELECT * FROM propiedades")
-        return self.cursor.fetchall()
+        propiedades = self.cursor.fetchall()
+        return propiedades
 
     def consultar_propiedades(self, id):
-        self.cursor.execute("SELECT * FROM propiedades WHERE id = %s", (id,))
+        self.cursor.execute(f"SELECT * FROM propiedades WHERE id = {id}")
         return self.cursor.fetchone()
 
     def agregar_propiedades(self, tipo_operacion, tipo_propiedad, zona, descripcion, precio, imagen_url, dni_propietario):
         sql = "INSERT INTO propiedades (tipo_operacion, tipo_propiedad, zona, descripcion, precio, imagen_url, dni_propietario) VALUES (%s, %s, %s, %s, %s, %s, %s)"
         valores = (tipo_operacion, tipo_propiedad, zona, descripcion, precio, imagen_url, dni_propietario)
+
         self.cursor.execute(sql, valores)
         self.conn.commit()
         return self.cursor.lastrowid
@@ -46,21 +62,17 @@ class Catalogo:
     def modificar_propiedades(self, id, nueva_tipo_operacion, nueva_tipo_propiedad, nueva_zona, nueva_descripcion, nuevo_precio, nueva_imagen_url, nuevo_dni_propietario):
         sql = "UPDATE propiedades SET tipo_operacion = %s, tipo_propiedad = %s, zona = %s, descripcion = %s, precio = %s, imagen_url = %s, dni_propietario = %s WHERE id = %s"
         valores = (nueva_tipo_operacion, nueva_tipo_propiedad, nueva_zona, nueva_descripcion, nuevo_precio, nueva_imagen_url, nuevo_dni_propietario, id)
+
         self.cursor.execute(sql, valores)
         self.conn.commit()
         return self.cursor.rowcount > 0
 
     def eliminar_propiedades(self, id):
-        self.cursor.execute("DELETE FROM propiedades WHERE id = %s", (id,))
+        self.cursor.execute(f"DELETE FROM propiedades WHERE id = {id}")
         self.conn.commit()
         return self.cursor.rowcount > 0
 
-catalogo = Catalogo(
-    host='tomasferc.mysql.pythonanywhere-services.com',
-    user='tomasferc',
-    password='CodoaCodo1234.',  # Asegúrate de poner tu contraseña aquí
-    database='tomasferc$miapp'
-)
+catalogo = Catalogo(host='tomasferc.mysql.pythonanywhere-services.com', user='tomasferc', password='***.', database='tomasferc$miapp')
 
 ruta_destino = '/home/tomasferc/mysite/static/img'
 
@@ -86,11 +98,12 @@ def agregar_propiedad():
         descripcion = request.form['descripcion']
         precio = request.form['precio']
         imagen = request.files['imagen']
-        dni_propietario = request.form['dni_propietario']
+        dni_propietario = request.form['propetario']
 
         nombre_imagen = secure_filename(imagen.filename)
         nombre_base, extension = os.path.splitext(nombre_imagen)
         nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
+
         nuevo_id = catalogo.agregar_propiedades(tipo_operacion, tipo_propiedad, zona, descripcion, precio, nombre_imagen, dni_propietario)
 
         if nuevo_id:
@@ -116,11 +129,14 @@ def modificar_propiedades(id):
         nombre_imagen = secure_filename(imagen.filename)
         nombre_base, extension = os.path.splitext(nombre_imagen)
         nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
+
         imagen.save(os.path.join(ruta_destino, nombre_imagen))
+
         propiedades = catalogo.consultar_propiedades(id)
         if propiedades:
             imagen_vieja = propiedades["imagen_url"]
             ruta_imagen = os.path.join(ruta_destino, imagen_vieja)
+
             if os.path.exists(ruta_imagen):
                 os.remove(ruta_imagen)
     else:
@@ -140,12 +156,14 @@ def eliminar_propiedades(id):
         ruta_imagen = os.path.join(ruta_destino, propiedades['imagen_url'])
         if os.path.exists(ruta_imagen):
             os.remove(ruta_imagen)
+
         if catalogo.eliminar_propiedades(id):
             return jsonify({"mensaje": "Propiedad eliminada"}), 200
         else:
             return jsonify({"mensaje": "Error al eliminar la propiedad"}), 403
     else:
         return jsonify({"mensaje": "Propiedad no encontrada"}), 404
+
 
 @app.route('/')
 def index():
@@ -179,6 +197,7 @@ def altas():
 def modificar():
     return render_template('modificar.html')
 
+
 @app.route('/listado')
 def listado():
     return render_template('listado.html')
@@ -187,5 +206,5 @@ def listado():
 def eliminar():
     return render_template('listadoEliminar.html')
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
