@@ -72,7 +72,7 @@ class Catalogo:
         self.conn.commit()
         return self.cursor.rowcount > 0
 
-catalogo = Catalogo(host='tomasferc.mysql.pythonanywhere-services.com', user='tomasferc', password='***.', database='tomasferc$miapp')
+catalogo = Catalogo(host='host', user='user', password='***.', database='miapp')
 
 ruta_destino = '/home/tomasferc/mysite/static/img'
 
