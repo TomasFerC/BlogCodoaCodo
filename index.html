@@ -1,0 +1,161 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>CoDo Prop - Inmobiliaria</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/inicio.css') }}">
+    <script src="{{ url_for('static', filename='js/inicio.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="imagen-fondo">
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="animate__animated animate__backInDown">Encuentra tu hogar ideal</h1>
+            <p>Explora nuestra amplia selección de propiedades en venta y alquileres</p>
+        </div>
+    </section>
+
+    <section class="filters">
+        <h2 class="filter-header">Filtrar Propiedades<span class="toggle-arrow">▼</span></h2>
+        <form action="#" class="filtros">
+            <div class="filter-group buscador">
+                <label for="tipo_accion">Busqueda:</label>
+                <input type="text" placeholder="Buscar" class="search-input">
+            </div>
+            <div class="filter-group">
+                <label for="tipo_accion">Operación:</label>
+                <select id="tipo_accion" name="tipo_accion">
+                    <option value="">Todas</option>
+                    <option value="compara">Compara</option>
+                    <option value="alquilar">Alquilar</option>
+                    <option value="temporal">Temporal</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="tipo_propiedad">Propiedad:</label>
+                <select id="tipo_propiedad" name="tipo_propiedad">
+                    <option value="">Todas</option>
+                    <option value="departamento">Departamento</option>
+                    <option value="casa">Casa</option>
+                    <option value="local">Local Comercial</option>
+                    <option value="terreno">Terreno</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="zona">Zona:</label>
+                <select id="zona" name="zona">
+                    <option value="">Todas</option>
+                    <option value="palermo">Palermo</option>
+                    <option value="belgrano">Belgrano</option>
+                    <option value="recoleta">Recoleta</option>
+                    <option value="nuñez">Nuñez</option>
+                    <option value="coghlan">Coghlan</option>
+                </select>
+            </div>
+            <div class="filter-group precio">
+                <input type="number" id="precio_minimo" name="precio_minimo" placeholder="Mínimo">
+            </div>
+            <div class="filter-group  precio">
+                <input type="number" id="precio_maximo" name="precio_maximo" placeholder="Máximo">
+            </div>
+            <div class="filter-group buscar">
+                <button type="submit" class="filter-btn">Buscar</button>
+            </div>
+        </form>
+    </section>
+
+</div>
+<section class="properties">
+    <h2>Propiedades Destacadas:</h2>
+    <ul class="properties-list">
+        <li class="property-item">
+            <a href="{{ url_for('error') }}" class="property-link">
+                <div id="slider">
+                    <div class="slide" style="background:dodgerBlue;">
+                        <img src="https://images5.alphacoders.com/343/thumb-1920-343645.jpg">
+                    </div>
+
+                    <div class="slide" style="background:coral;">
+                        <img src="https://wallpapercave.com/wp/wp2634222.jpg">
+                    </div>
+
+                    <div class="slide" style="background:crimson;">
+                        <img src="https://wallpaperaccess.com/full/1154341.jpg">
+                    </div>
+
+                    <div class="slide" style="background: #6edf10;">
+                        <img src="https://images6.alphacoders.com/462/thumb-1920-462371.jpg">
+                    </div>
+                    <span class="controls" onclick="prevSlide(-1)" id="left-arrow"><i class="fa fa-arrow-left"
+                            aria-hidden="true"></i>
+                    </span>
+                    <span class="controls" id="right-arrow" onclick="nextSlide(1)"><i class="fa fa-arrow-right"
+                            aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="dots-con">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                </div>
+                <div class="property-info">
+                    <h3>Casa en Belgrano</h3>
+                    <span class="property-price">$2.800.000</span>
+                    <span class="property-accion">Alquiler</span>
+                    <span class="property-details">4 Hab | 3 Baños | 200m²</span>
+                </div>
+            </a>
+        </li>
+        <li class="property-item">
+            <a href="{{ url_for('error') }}" class="property-link">
+                <div id="slider">
+                    <div class="slide" style="background:dodgerBlue;">
+                        <img src="https://images5.alphacoders.com/343/thumb-1920-343645.jpg">
+                    </div>
+
+                    <div class="slide" style="background:coral;">
+                        <img src="https://wallpapercave.com/wp/wp2634222.jpg">
+                    </div>
+
+                    <div class="slide" style="background:crimson;">
+                        <img src="https://wallpaperaccess.com/full/1154341.jpg">
+                    </div>
+
+                    <div class="slide" style="background: #6edf10;">
+                        <img src="https://images6.alphacoders.com/462/thumb-1920-462371.jpg">
+                    </div>
+                    <span class="controls" onclick="prevSlide(-1)" id="left-arrow"><i class="fa fa-arrow-left"
+                            aria-hidden="true"></i>
+                    </span>
+                    <span class="controls" id="right-arrow" onclick="nextSlide(1)"><i class="fa fa-arrow-right"
+                            aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="dots-con">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                </div>
+                <div class="property-info">
+                    <h3>Casa en Belgrano</h3>
+                    <span class="property-price">$2.800.000</span>
+                    <span class="property-accion">Alquiler</span>
+                    <span class="property-details">4 Hab | 3 Baños | 200m²</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <nav aria-label="Paginación">
+        <ul class="pagination">
+            <li class="pagination-button-back"><a href="#" class="pagination-button-back-link" title="Anterior"><span
+                        class="andes-pagination__arrow-title">Anterior</span></a></li>
+            <li class="pagination-button-current"><a class="pagination-link" href="#" aria-current="page"
+                    aria-label="Ir a la página 1">1</a></li>
+            <li class="pagination-button-current"><a class="pagination-link" href="#" aria-current="page"
+                    aria-label="Ir a la página 2">2</a></li>
+            <li class="pagination-button"><a class="pagination-link" href="#">3</a></li>
+
+            <li class="pagination-button-button-next"><a href="#" class="pagination-button-next-link"
+                    title="Siguiente"><span class="andes-pagination__arrow-title">Siguiente</span></a></li>
+        </ul>
+    </nav>
+</section>
+{% endblock %}
