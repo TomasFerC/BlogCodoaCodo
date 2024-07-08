@@ -1,4 +1,4 @@
-const BASE_URL = "https://tomasferc.mysql.pythonanywhere-services.com/";
+const BASE_URL = "https://tomasferc.pythonanywhere.com/";
 // Cuando subas a PythonAnywhere, cambia a la siguiente línea:
 // const BASE_URL = "https://USUARIO.pythonanywhere.com/";
 
@@ -29,7 +29,8 @@ fetch(BASE_URL + 'propiedades')
                 '<td>' + propiedad.precio + '</td>' +
                 '<td>' + propiedad.dni_propietario + '</td>' +
                 // Cambiamos la URL de la imagen dependiendo del entorno
-                '<td><img src=htpps://www.pythonanywhere-services.com/user/tomasferc/files/home/tomasferc/mysite/static/img' + propiedad.imagen_url + ' alt="Imagen de la propiedad" style="width: 100px;"></td>';
+                '<td><img src=https://www.pythonanywhere.com/user/tomasferc/files/home/tomasferc/mysite/static/img/' + propiedad.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">'
++ '</td>';
 
                 tablaPropiedades.appendChild(fila); // Agregamos la fila a la tabla
         }

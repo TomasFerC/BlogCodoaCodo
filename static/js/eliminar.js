@@ -1,5 +1,5 @@
 // URL base para las solicitudes
-const URL = "https://tomasferc.mysql.pythonanywhere-services.com/";
+const URL = "https://tomasferc.pythonanywhere.com/";
 
 // Función para obtener la lista de propiedades desde el servidor
 function obtenerPropiedades() {

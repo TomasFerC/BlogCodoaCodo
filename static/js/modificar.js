@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const URL = "https://tomasferc.mysql.pythonanywhere-services.com/";
+document.addEventListener('DOMContentLoaded', function () {
+    const URL = "https://tomasferc.pythonanywhere.com/";
 
     // Variables de estado para controlar los datos del formulario y la visibilidad
     let id = '';
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let mostrarDatosPropiedad = false;
 
     // Event listener para el formulario de obtener propiedad
-    document.getElementById('form-obtener-propiedad').addEventListener('submit', function(event) {
+    document.getElementById('form-obtener-propiedad').addEventListener('submit', function (event) {
         event.preventDefault();
         const codigo = document.getElementById('id').value;
 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const imagenActual = document.getElementById('imagen-actual');
             if (imagen_url && !imagenSeleccionada) { // Verificar si hay una URL de imagen y no se ha seleccionado una nueva imagen
-                imagenActual.src = 'htpps://www.pythonanywhere-services.com/user/tomasferc/files/home/tomasferc/mysite/static/img' + imagen_url;
+                imagenActual.src = 'https://www.pythonanywhere.com/user/tomasferc/files/home/tomasferc/mysite/static/img/' + imagen_url;
                 imagenActual.style.display = 'block'; // Mostrar la imagen actual
             } else {
                 imagenActual.style.display = 'none'; // Ocultar la imagen si no hay URL
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Event listener para la selección de imagen
-    document.getElementById('nuevaImagen').addEventListener('change', function(event) {
+    document.getElementById('nuevaImagen').addEventListener('change', function (event) {
         const file = event.target.files[0];
         imagenSeleccionada = file;
         imagenUrlTemp = URL.createObjectURL(file); // Crear URL temporal para vista previa
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Event listener para guardar cambios
-    document.getElementById('form-guardar-cambios').addEventListener('submit', function(event) {
+    document.getElementById('form-guardar-cambios').addEventListener('submit', function (event) {
         event.preventDefault();
 
         const formData = new FormData();
@@ -102,21 +102,21 @@ document.addEventListener('DOMContentLoaded', function() {
             method: 'PUT',
             body: formData,
         })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error('Error al guardar los cambios de la propiedad.');
-            }
-        })
-        .then(data => {
-            alert('Propiedad actualizada correctamente.');
-            limpiarFormulario();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Error al actualizar la propiedad.');
-        });
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Error al guardar los cambios de la propiedad.');
+                }
+            })
+            .then(data => {
+                alert('Propiedad actualizada correctamente.');
+                limpiarFormulario();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error al actualizar la propiedad.');
+            });
     });
 
     // Limpiar formulario y restablecer variables de estado

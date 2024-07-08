@@ -1,5 +1,5 @@
 // URL base para las solicitudes
-const URL = "https://tomasferc.mysql.pythonanywhere-services.com/";
+const URL = "https://tomasferc.pythonanywhere.com/";
 // Si se sube a un servidor, usar la URL correspondiente
 // const URL = "https://USUARIO.pythonanywhere.com/";
 
